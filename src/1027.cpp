@@ -15,7 +15,6 @@ bool cmp(Activity x, Activity y) {
 void solve() {
     memset(dp, 0x00, sizeof(dp));
     act[0].s = act[0].f = act[0].v = 0;
-    // dp[1] = act[1].v;
     for (int i = 1, j, l, r, mid; i <= n; i++) {
         dp[i] = dp[i - 1];
         l = 0;
