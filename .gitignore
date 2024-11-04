@@ -1,2 +1,6 @@
 .vscode/*
 main.exe
+input
+output
+src/input
+src/output
