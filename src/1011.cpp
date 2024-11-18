@@ -58,7 +58,6 @@ void solve(int l, int r) {
     merge(l, mid, r);
 
     vector<int> tmp;
-    // double tmpDis = disMin;
     for (int i = l, j; i <= r; i++) {
         if (1.0 * abs(points[i].x - xMid) >= disMin) continue;
         // j = tmp.size() - 1;
@@ -68,7 +67,6 @@ void solve(int l, int r) {
         // }
         tmp.push_back(i);
     }
-    // disMin = min(disMin, tmpDis);
     int sz = tmp.size();
     for (int i = 0; i < sz; i++) {
         for (int j = max(0, i - 6); j < i; j++) {
