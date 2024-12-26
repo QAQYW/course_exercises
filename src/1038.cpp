@@ -50,7 +50,6 @@ private:
     int *flow, *dis, *pre, *linked, *vis;
     int maxflow, mincost;
     bool spfa(int s, int t) {
-        // puts("004");
         memset(flow, 0x3f, n * sizeof(int));
         memset(dis, 0x3f, n * sizeof(int));
         memset(vis, 0x00, n * sizeof(int));
@@ -77,17 +76,12 @@ private:
                 }
             }
         }
-        // for (int i = 0; i < n; i++) {
-        //     printf("vis[%d]=%d\n", i, vis[i]);
-        // }
         return pre[t] != -1;
     }
     void mcmf() {
-        // puts("002");
         maxflow = 0;
         mincost = 0;
         while (spfa(s, t)) {
-            // puts("003");
             int p = t;
             maxflow += flow[t];
             mincost += flow[t] * dis[t];
@@ -96,12 +90,10 @@ private:
                 graph.edge[linked[p] ^ 1].flow += flow[t];
                 p = pre[p];
             }
-            // printf("flow[t] = %d\n", flow[t]);
         }
     }
 public:
     void mcmf(int &mf, int &mc) {
-        // puts("001");
         mcmf();
         mf = maxflow;
         mc = mincost;
@@ -111,7 +103,6 @@ public:
 }
 
 const int N = 55;
-// const int N2 = 105;
 
 int main() {
     int T;
